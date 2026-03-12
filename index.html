@@ -16,6 +16,18 @@
         <p>Click the button to generate your lucky numbers!</p>
         <button id="generator-btn">Generate Numbers</button>
         <lotto-numbers></lotto-numbers>
+
+        <section class="inquiry-section">
+            <h2>Partnership Inquiry</h2>
+            <form class="inquiry-form" action="https://formspree.io/f/mjgawqqo" method="POST">
+                <input type="text" name="name" placeholder="Your name" required>
+                <input type="email" name="email" placeholder="Your email" required>
+                <input type="text" name="company" placeholder="Company / Brand">
+                <textarea name="message" placeholder="Tell us about your partnership proposal" rows="4" required></textarea>
+                <input type="hidden" name="_subject" value="New partnership inquiry">
+                <button type="submit">Send Inquiry</button>
+            </form>
+        </section>
     </div>
     <script src="main.js"></script>
 </body>

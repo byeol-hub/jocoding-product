@@ -24,13 +24,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 20px;
     text-align: center;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .container {
+    width: 100%;
+    max-width: 560px;
     padding: 2rem;
     border-radius: 10px;
     background-color: var(--card-bg);
@@ -74,4 +77,49 @@ body {
 #theme-toggle-btn:hover {
     background-color: rgba(127, 127, 127, 0.18);
     opacity: 1;
+}
+
+.inquiry-section {
+    margin-top: 28px;
+    text-align: left;
+}
+
+.inquiry-section h2 {
+    margin: 0 0 12px 0;
+    font-size: 20px;
+}
+
+.inquiry-form {
+    display: grid;
+    gap: 10px;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(127, 127, 127, 0.4);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font: inherit;
+    color: var(--text-color);
+    background-color: var(--card-bg);
+}
+
+.inquiry-form textarea {
+    resize: vertical;
+}
+
+.inquiry-form button {
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.inquiry-form button:hover {
+    background-color: #1d4ed8;
 }
