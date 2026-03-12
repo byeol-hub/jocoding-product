@@ -8,6 +8,7 @@ class LottoNumbers extends HTMLElement {
                 .numbers-container {
                     display: flex;
                     justify-content: center;
+                    flex-wrap: wrap;
                     gap: 10px;
                     margin-top: 20px;
                 }
@@ -48,9 +49,13 @@ class LottoNumbers extends HTMLElement {
 
 customElements.define('lotto-numbers', LottoNumbers);
 
-document.getElementById('generator-btn').addEventListener('click', () => {
-    document.querySelector('lotto-numbers').generateNumbers();
-});
+const generatorBtn = document.getElementById('generator-btn');
+const lottoNumbersElement = document.querySelector('lotto-numbers');
+if (generatorBtn && lottoNumbersElement) {
+    generatorBtn.addEventListener('click', () => {
+        lottoNumbersElement.generateNumbers();
+    });
+}
 
 const THEME_STORAGE_KEY = 'theme';
 const themeToggleBtn = document.getElementById('theme-toggle-btn');
@@ -58,7 +63,9 @@ const themeToggleBtn = document.getElementById('theme-toggle-btn');
 function applyTheme(theme) {
     const isDark = theme === 'dark';
     document.body.classList.toggle('dark-mode', isDark);
-    themeToggleBtn.textContent = isDark ? '☀️ Light' : '🌙 Dark';
+    if (themeToggleBtn) {
+        themeToggleBtn.textContent = isDark ? '☀️ Light' : '🌙 Dark';
+    }
 }
 
 function getInitialTheme() {
@@ -72,8 +79,20 @@ function getInitialTheme() {
 let currentTheme = getInitialTheme();
 applyTheme(currentTheme);
 
-themeToggleBtn.addEventListener('click', () => {
-    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem(THEME_STORAGE_KEY, currentTheme);
-    applyTheme(currentTheme);
-});
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem(THEME_STORAGE_KEY, currentTheme);
+        applyTheme(currentTheme);
+    });
+}
+
+const currentYearElement = document.getElementById('current-year');
+if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
+}
+
+const lastUpdatedElement = document.getElementById('last-updated');
+if (lastUpdatedElement) {
+    lastUpdatedElement.textContent = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'long' }).format(new Date());
+}

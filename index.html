@@ -1,36 +1,148 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>로또 인사이트 랩 | 데이터 기반 로또 정보와 생성기</title>
+    <meta name="description" content="로또 번호 생성기, 확률 이해 가이드, 자금 관리 체크리스트를 제공하는 정보형 사이트입니다.">
     <meta name="google-adsense-account" content="ca-pub-9512119373013148">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9512119373013148" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="theme-row">
-            <button id="theme-toggle-btn" type="button" aria-label="Toggle theme">🌙 Dark</button>
-        </div>
-        <h1>Lotto Number Generator</h1>
-        <p>Click the button to generate your lucky numbers!</p>
-        <button id="generator-btn">Generate Numbers</button>
-        <lotto-numbers></lotto-numbers>
+    <header class="site-header">
+        <a class="brand" href="index.html">로또 인사이트 랩</a>
+        <nav class="main-nav" aria-label="주요 메뉴">
+            <a href="#tool">번호 생성기</a>
+            <a href="#guide">구매 가이드</a>
+            <a href="#faq">FAQ</a>
+            <a href="#inquiry">제휴 문의</a>
+            <a href="about.html">소개</a>
+            <a href="privacy.html">개인정보처리방침</a>
+            <a href="terms.html">이용약관</a>
+        </nav>
+        <button id="theme-toggle-btn" class="theme-toggle-btn" type="button" aria-label="Toggle theme">🌙 Dark</button>
+    </header>
 
-        <section class="inquiry-section">
-            <h2>Partnership Inquiry</h2>
+    <main class="container">
+        <section class="hero">
+            <h1>무작위 번호보다 중요한 건, <br>지속 가능한 플레이 원칙입니다.</h1>
+            <p>
+                이 사이트는 로또 번호 생성 기능과 함께, 확률 이해·예산 관리·기록 습관 같은
+                실전 원칙을 정리해 장기적으로 손실을 줄이고 판단 품질을 높이는 데 초점을 둡니다.
+            </p>
+            <div class="hero-badges">
+                <span>원본 콘텐츠</span>
+                <span>정기 업데이트</span>
+                <span>투명한 정책 페이지</span>
+            </div>
+        </section>
+
+        <section id="tool" class="panel">
+            <h2>로또 번호 생성기</h2>
+            <p>1부터 45까지 중복 없이 6개 번호를 생성합니다. 결과는 참고용이며 당첨을 보장하지 않습니다.</p>
+            <button id="generator-btn" class="primary-btn" type="button">번호 생성하기</button>
+            <lotto-numbers></lotto-numbers>
+        </section>
+
+        <section id="guide" class="panel">
+            <h2>고품질 플레이 가이드</h2>
+            <article>
+                <h3>1. 확률을 먼저 이해하세요</h3>
+                <p>
+                    로또는 본질적으로 확률 게임입니다. 최근 당첨 번호를 분석하더라도
+                    다음 회차 당첨 확률을 결정적으로 높일 수는 없습니다. 따라서 전략의 핵심은
+                    번호 예측이 아니라 예산 통제와 기록 기반 의사결정입니다.
+                </p>
+            </article>
+            <article>
+                <h3>2. 월 예산을 고정하세요</h3>
+                <p>
+                    생활비와 분리된 고정 예산만 사용하세요. 예산 초과 구매는 즉시 중단하는 규칙을
+                    명문화하면 충동 구매를 줄일 수 있습니다. 이 원칙 하나만으로도 장기 손실 변동 폭을
+                    크게 낮출 수 있습니다.
+                </p>
+            </article>
+            <article>
+                <h3>3. 구매 기록을 남기세요</h3>
+                <p>
+                    회차, 구매 금액, 번호 선택 방식을 기록하면 체감 성과와 실제 성과의 차이를 확인할 수 있습니다.
+                    감정이 아닌 데이터로 판단하는 습관은 비합리적인 패턴 추종을 줄이는 데 효과적입니다.
+                </p>
+            </article>
+            <article>
+                <h3>4. 정보성 페이지를 함께 관리하세요</h3>
+                <p>
+                    광고 심사 관점에서도 이용자 관점에서도 사이트 신뢰가 중요합니다.
+                    소개 페이지, 개인정보처리방침, 이용약관, 문의 채널을 갖추고
+                    페이지별 주제를 명확히 운영하면 품질 평가에 유리합니다.
+                </p>
+            </article>
+        </section>
+
+        <section class="panel">
+            <h2>책임 있는 이용 체크리스트</h2>
+            <ul class="check-list">
+                <li>이번 달 구매 예산을 미리 설정했는가?</li>
+                <li>손실 만회를 위한 추가 구매를 하지 않는가?</li>
+                <li>당첨 기대보다 재미/정보 수집 목적이 명확한가?</li>
+                <li>개인 정보 및 문의 정책을 확인했는가?</li>
+            </ul>
+        </section>
+
+        <section id="faq" class="panel">
+            <h2>FAQ</h2>
+            <details>
+                <summary>이 번호 생성기는 당첨 확률을 높여주나요?</summary>
+                <p>아니요. 무작위 생성 도구이며 특정 번호의 우위를 보장하지 않습니다.</p>
+            </details>
+            <details>
+                <summary>광고가 표시되지 않으면 어떻게 하나요?</summary>
+                <p>애드센스 심사 상태, 트래픽, 계정 정책, 광고 제한 설정에 따라 표시 여부가 달라질 수 있습니다.</p>
+            </details>
+            <details>
+                <summary>문의는 어디서 하나요?</summary>
+                <p>아래 제휴 문의 폼으로 전달해 주세요. 영업일 기준으로 확인 후 답변합니다.</p>
+            </details>
+        </section>
+
+        <section id="inquiry" class="panel inquiry-section">
+            <h2>제휴 문의</h2>
             <form class="inquiry-form" action="https://formspree.io/f/mjgawqqo" method="POST">
-                <input type="text" name="name" placeholder="Your name" required>
-                <input type="email" name="email" placeholder="Your email" required>
-                <input type="text" name="company" placeholder="Company / Brand">
-                <textarea name="message" placeholder="Tell us about your partnership proposal" rows="4" required></textarea>
+                <label>
+                    이름
+                    <input type="text" name="name" placeholder="홍길동" required>
+                </label>
+                <label>
+                    이메일
+                    <input type="email" name="email" placeholder="name@example.com" required>
+                </label>
+                <label>
+                    회사/브랜드
+                    <input type="text" name="company" placeholder="회사명 또는 서비스명">
+                </label>
+                <label>
+                    문의 내용
+                    <textarea name="message" placeholder="제휴 목적, 제안 내용, 예상 일정 등을 적어주세요." rows="5" required></textarea>
+                </label>
                 <input type="hidden" name="_subject" value="New partnership inquiry">
-                <button type="submit">Send Inquiry</button>
+                <button type="submit" class="primary-btn">문의 보내기</button>
             </form>
         </section>
-    </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="current-year"></span> 로또 인사이트 랩. 정보 제공 목적의 사이트입니다.</p>
+        <p>최근 업데이트: <span id="last-updated"></span></p>
+        <p class="footer-links">
+            <a href="about.html">소개</a>
+            <a href="privacy.html">개인정보처리방침</a>
+            <a href="terms.html">이용약관</a>
+            <a href="mailto:contact@lottoinsightlab.com">contact@lottoinsightlab.com</a>
+        </p>
+    </footer>
+
     <script src="main.js"></script>
 </body>
 </html>
