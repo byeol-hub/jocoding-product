@@ -15,7 +15,8 @@ class LottoNumbers extends HTMLElement {
                     width: 50px;
                     height: 50px;
                     border-radius: 50%;
-                    background-color: #333;
+                    background-color: var(--ball-bg, #333);
+                    color: var(--ball-text, #fff);
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -49,4 +50,30 @@ customElements.define('lotto-numbers', LottoNumbers);
 
 document.getElementById('generator-btn').addEventListener('click', () => {
     document.querySelector('lotto-numbers').generateNumbers();
+});
+
+const THEME_STORAGE_KEY = 'theme';
+const themeToggleBtn = document.getElementById('theme-toggle-btn');
+
+function applyTheme(theme) {
+    const isDark = theme === 'dark';
+    document.body.classList.toggle('dark-mode', isDark);
+    themeToggleBtn.textContent = isDark ? '☀️ Light' : '🌙 Dark';
+}
+
+function getInitialTheme() {
+    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+        return savedTheme;
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+let currentTheme = getInitialTheme();
+applyTheme(currentTheme);
+
+themeToggleBtn.addEventListener('click', () => {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem(THEME_STORAGE_KEY, currentTheme);
+    applyTheme(currentTheme);
 });
